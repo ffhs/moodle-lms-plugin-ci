@@ -20,7 +20,7 @@ RUN set -eux; \
     php -r "copy('https://getcomposer.org/installer','composer-setup.php');" && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm composer-setup.php && \
-    composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci /opt/moodle-plugin-ci "^4.5.9" && \
+    composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci /opt/moodle-plugin-ci "^4.5.11" && \
     ln -s /opt/moodle-plugin-ci/bin/moodle-plugin-ci /usr/local/bin/moodle-plugin-ci && \
     ln -s /opt/moodle-plugin-ci/vendor/bin/* /usr/local/bin/ && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
