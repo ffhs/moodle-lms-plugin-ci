@@ -13,7 +13,7 @@ Based on [`moodlehq/moodle-php-apache`](https://hub.docker.com/r/moodlehq/moodle
 
 - PHP 8.1 to 8.4 builds available
 - Includes Node.js 22, Composer, MariaDB & PostgreSQL clients
-- Preinstalled [moodle-plugin-ci](https://github.com/moodlehq/moodle-plugin-ci) v4.5.9
+- Preinstalled [moodle-plugin-ci](https://github.com/moodlehq/moodle-plugin-ci) v4.5.11
 - Optimized for GitLab CI or local development
 
 ---

@@ -18,9 +18,16 @@ variables:
 
 build_moodle_plugin_ci:
   extends: .build_template
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+      variables:
+        IMAGE_TAG_SUFFIX: "-dev"
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      variables:
+        IMAGE_TAG_SUFFIX: ""
   parallel:
     matrix:
       - PHP_VERSION: ["8.1", "8.2", "8.3", "8.4"]
   script:
-    - docker build --build-arg PHP_VERSION=${PHP_VERSION} -t $DOCKERHUB_REPO:${PHP_VERSION} .
-    - docker push $DOCKERHUB_REPO:${PHP_VERSION}
+    - docker build --build-arg PHP_VERSION=${PHP_VERSION} -t $DOCKERHUB_REPO:${PHP_VERSION}${IMAGE_TAG_SUFFIX} .
+    - docker push $DOCKERHUB_REPO:${PHP_VERSION}${IMAGE_TAG_SUFFIX}
