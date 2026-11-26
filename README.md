@@ -3,6 +3,7 @@
 [![GitHub](https://img.shields.io/badge/github-repo-blue?logo=github&label=Moodle%20LMS%20Plugin%20CI)](https://github.com/ffhs/moodle-lms-plugin-ci)
 ![PHP Versions](https://img.shields.io/badge/PHP-8.1%20%7C%208.2%20%7C%208.3%20%7C%208.4-blue)
 ![License](https://img.shields.io/badge/license-%20%20GNU%20GPLv3%20-red)
+[![Docker](https://img.shields.io/badge/Docker-2496ED)](https://hub.docker.com/r/ffhs/moodle-lms-plugin-ci)
 
 A prebuilt **Moodle Plugin CI** Docker image for faster and more consistent testing across Moodle versions.
 Based on [`moodlehq/moodle-php-apache`](https://hub.docker.com/r/moodlehq/moodle-php-apache) and includes all dependencies for [moodle-plugin-ci](https://github.com/moodlehq/moodle-plugin-ci). Used for GitLab CI/CD.

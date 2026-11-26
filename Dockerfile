@@ -16,11 +16,11 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN set -eux; \
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get update -yqq && \
-    apt-get -yqq install --no-install-suggests default-jre-headless mariadb-client git unzip curl locales nodejs rsync postgresql-client && \
+    apt-get -yqq install --no-install-suggests --no-install-recommends mariadb-client git unzip curl locales nodejs rsync postgresql-client && \
     php -r "copy('https://getcomposer.org/installer','composer-setup.php');" && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm composer-setup.php && \
-    composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci /opt/moodle-plugin-ci "^4.5.11" && \
+    composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci /opt/moodle-plugin-ci "^4.5.13" && \
     ln -s /opt/moodle-plugin-ci/bin/moodle-plugin-ci /usr/local/bin/moodle-plugin-ci && \
     ln -s /opt/moodle-plugin-ci/vendor/bin/* /usr/local/bin/ && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
